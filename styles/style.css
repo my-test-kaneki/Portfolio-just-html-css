@@ -132,6 +132,7 @@ main {
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 25;
 }
 
 /* Start navbar */
@@ -459,9 +460,9 @@ main {
 
 /* Slideshow container */
 
-.slider-wrapper {
+/* .slider-wrapper {
   position: relative;
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
 
 }
@@ -476,13 +477,13 @@ main {
   border-radius: 0.5rem;
   -ms-overflow-style: none;
   /* Hide scrollbar IE and Edge */
-  scrollbar-width: none;
-  /* Hide scrollbar Firefox */
-  scroll-behavior: smooth;
+/* scrollbar-width: none; */
+/* Hide scrollbar Firefox */
+
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.slider::-webkit-scrollbar {
+/* .slider::-webkit-scrollbar {
   display: none;
 }
 
@@ -513,7 +514,61 @@ main {
 
 .slider-nav a:hover {
   opacity: 1;
+} */
+
+
+#slider {
+  overflow: hidden;
 }
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+
+  30% {
+    left: 0;
+  }
+
+  33% {
+    left: -100%;
+  }
+
+  63% {
+    left: -100%;
+  }
+
+  66% {
+    left: -200%;
+  }
+
+  95% {
+    left: -200%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+#slider figure {
+  width: 300%;
+  position: relative;
+  animation: 9s slider infinite;
+}
+
+#slider figure:hover {
+  /*animation-play-state: paused; enable for pause on hover*/
+}
+
+#slider figure img {
+  width: 33.333333333%;
+  height: 100%;
+  float: left;
+  border-radius: 2rem;
+  border: 0.3rem solid var(--primaryColor);
+}
+
 
 /* End portfolio */
 /* Start Clients */
@@ -748,4 +803,5 @@ ul.social-icons {
   .projectcards {
     justify-content: space-between;
   }
+  
 }
